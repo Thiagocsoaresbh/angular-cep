@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+  margin: 3% auto;
+}
+.row {
+  margin: 3% auto;
+}
+.h1, .h2 {
+  text-align: center;
+  align-items: center;
+}
