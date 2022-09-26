@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxViacepService, Endereco, CEPErrorCode, CEPError } from "@brunoc/ngx-viacep";
+import { NgxViacepService, Endereco, CEPError } from "@brunoc/ngx-viacep";
 import { EMPTY } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 @Component({
@@ -9,23 +9,20 @@ import { catchError } from 'rxjs/operators';
 })
 export class ProprietarioComponent implements OnInit {
   title = "app-cep";
-  constructor(private viacep: NgxViacepService) {} // Injetando o serviço
+  constructor(private viacep: NgxViacepService) {}
 
   ngOnInit(): void {
     this.viacep
-    .buscarPorCep("32371-110")
+    .buscarPorCep("31250310")
     .pipe(
       catchError((error: CEPError) => {
-        // Ocorreu algum erro :/
         console.log(error.message);
         return EMPTY;
       })
     )
     .subscribe((endereco: Endereco) => {
-      // Endereço retornado :)
       console.log(endereco);
     });
 
   }
-
 }
