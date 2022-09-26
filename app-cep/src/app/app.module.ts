@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { NgxViacepModule, CEPError } from "@brunoc/ngx-viacep"; // Importando o módulo
 import { AppComponent } from './app.component';
 import { ProprietarioComponent } from './proprietario/proprietario.component';
+import { FormsModule } from '@angular/forms';
+import { ProprietarioService } from './proprietario.service';
 
 @NgModule({
   declarations: [
@@ -14,9 +16,10 @@ import { ProprietarioComponent } from './proprietario/proprietario.component';
   imports: [
     BrowserModule,
     NgxViacepModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [ProprietarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
