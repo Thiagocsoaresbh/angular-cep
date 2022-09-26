@@ -13,7 +13,7 @@ export class ProprietarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.viacep
-    .buscarPorCep("01001000")
+    .buscarPorCep("32371-110")
     .pipe(
       catchError((error: CEPError) => {
         // Ocorreu algum erro :/
